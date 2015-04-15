@@ -24,6 +24,7 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 ADD scripts /scripts
 RUN chmod +x /scripts/*.sh
 RUN touch /.firstrun
+RUN chown daemon:daemon /etc/sasldb2
 
 # Command to run
 ENTRYPOINT ["/scripts/run.sh"]
